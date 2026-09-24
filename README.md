@@ -1,10 +1,6 @@
 # SiBisa — Sistem Inventaris Barang & Sarana Prasarana BMKG
 
 <p align="center">
-  <img src="public/assets/logo_bmkg.svg" alt="BMKG Logo" width="100" height="100">
-</p>
-
-<p align="center">
   <strong>Stasiun Meteorologi Kelas II Syamsudin Noor Banjarmasin</strong><br>
   Badan Meteorologi, Klimatologi, dan Geofisika (BMKG)
 </p>
