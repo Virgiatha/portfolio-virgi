@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
-  return { title: project.shortTitle, description: project.summary, openGraph: { title: `${project.shortTitle} | Virgi Atha Raditya`, description: project.summary, images: [{ url: project.image }] } };
+  return { title: project.shortTitle, description: project.summary, openGraph: { title: `${project.shortTitle} | Virgi Atha Raditya `, description: project.summary, images: [{ url: project.image }] } };
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
