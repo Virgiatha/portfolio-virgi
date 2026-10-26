@@ -1,10 +1,54 @@
+import Link from "next/link";
 import { ArrowUpRight, ExternalLink, Mail, MapPin } from "lucide-react";
+import { site } from "@/data/site";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-[var(--cobalt)] py-20 text-white sm:py-28">
-      <div className="absolute -right-20 -top-20 size-96 rounded-full border-[70px] border-white/10" /><div className="absolute -bottom-36 left-1/3 size-80 rounded-full bg-[var(--accent)] opacity-20 blur-3xl" />
-      <div className="shell relative"><div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-[11px] font-bold uppercase tracking-widest"><span className="size-2 rounded-full bg-[var(--accent)]" />06 / Let&apos;s connect</div><h2 className="display mt-8">GOT AN IDEA?<br /><span className="text-[var(--accent)]">LET&apos;S MAKE IT REAL.</span></h2><div className="mt-14 grid gap-3 md:grid-cols-3"><a className="group flex min-h-40 items-end justify-between rounded-[1.75rem] bg-white p-5 text-black transition-transform hover:-translate-y-1" href="mailto:virgiatharaditya37@gmail.com"><span><Mail size={21} /><span className="mt-8 block text-[10px] font-bold uppercase tracking-widest text-black/45">Email</span><span className="mt-1 block text-sm font-bold sm:text-base">virgiatharaditya37@gmail.com</span></span><ArrowUpRight className="transition-transform group-hover:rotate-12" /></a><a className="group flex min-h-40 items-end justify-between rounded-[1.75rem] bg-black p-5 text-white transition-transform hover:-translate-y-1" href="https://www.linkedin.com/in/virgi-atha-raditya-5759531a4/" target="_blank" rel="noreferrer"><span><ExternalLink size={21} /><span className="mt-8 block text-[10px] font-bold uppercase tracking-widest text-white/45">LinkedIn</span><span className="mt-1 block font-bold">virgi-atha-raditya</span></span><ArrowUpRight className="transition-transform group-hover:rotate-12" /></a><div className="flex min-h-40 items-end rounded-[1.75rem] bg-[var(--accent)] p-5 text-black"><span><MapPin size={21} /><span className="mt-8 block text-[10px] font-bold uppercase tracking-widest text-black/45">Based in</span><span className="mt-1 block font-bold">Banjarbaru, South Kalimantan<br />Indonesia</span></span></div></div></div>
+    <section id="contact" className="section bg-[var(--ink)] text-[var(--surface)]">
+      <div className="container">
+        <div className="mb-12">
+          <p className="eyebrow text-[var(--accent)]">Contact</p>
+          <h2 className="heading mt-4">Open to full-stack, data, and AI roles.</h2>
+          <p className="copy mt-6 max-w-2xl">The fastest way to reach me is email.</p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-3">
+          <a
+            href={`mailto:${site.email}`}
+            className="group flex min-h-32 flex-col justify-between rounded-[var(--radius)] border border-[var(--line)] bg-[var(--surface)] p-6 text-[var(--ink)] transition-colors hover:border-[var(--accent)]"
+          >
+            <div>
+              <Mail size={20} className="text-[var(--accent)]" />
+              <p className="mt-6 text-xs font-medium uppercase tracking-wide text-[var(--ink-muted)]">Email</p>
+            </div>
+            <div className="flex items-center justify-between pt-4">
+              <span className="font-medium">{site.email}</span>
+              <ArrowUpRight size={16} className="transition-transform group-hover:rotate-12" />
+            </div>
+          </a>
+          <Link
+            href={site.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="group flex min-h-32 flex-col justify-between rounded-[var(--radius)] border border-[var(--line)] bg-[var(--surface)] p-6 text-[var(--ink)] transition-colors hover:border-[var(--accent)]"
+          >
+            <div>
+              <ExternalLink size={20} className="text-[var(--accent)]" />
+              <p className="mt-6 text-xs font-medium uppercase tracking-wide text-[var(--ink-muted)]">LinkedIn</p>
+            </div>
+            <div className="flex items-center justify-between pt-4">
+              <span className="font-medium">{site.shortName}</span>
+              <ArrowUpRight size={16} className="transition-transform group-hover:rotate-12" />
+            </div>
+          </Link>
+          <div className="flex min-h-32 flex-col justify-between rounded-[var(--radius)] border border-[var(--line)] bg-[var(--surface)] p-6 text-[var(--ink)]">
+            <div>
+              <MapPin size={20} className="text-[var(--accent)]" />
+              <p className="mt-6 text-xs font-medium uppercase tracking-wide text-[var(--ink-muted)]">Based in</p>
+            </div>
+            <p className="font-medium">{site.location}</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

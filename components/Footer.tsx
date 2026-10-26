@@ -1,3 +1,19 @@
+import { site } from "@/data/site";
+
 export default function Footer() {
-  return <footer className="bg-[var(--cobalt)] text-white"><div className="shell flex flex-col gap-4 border-t border-white/30 py-7 text-xs sm:flex-row sm:items-center sm:justify-between"><p className="font-bold">© 2026 Virgi Atha Raditya</p><p className="text-white/75">Designed with intention. Built with Next.js.</p><div className="flex gap-6"><a className="hover:text-[var(--accent)]" href="https://linkedin.com/in/virgi-atha-raditya" target="_blank" rel="noreferrer">LinkedIn</a><a className="hover:text-[var(--accent)]" href="mailto:virgiatharaditya37@gmail.com">Email</a></div></div></footer>;
+  return (
+    <footer className="bg-[var(--ink)] text-[var(--surface)]">
+      <div className="container flex flex-col gap-4 border-t border-[var(--line)] py-8 text-sm sm:flex-row sm:items-center sm:justify-between">
+        <p className="font-medium">© 2026 {site.name}</p>
+        <div className="flex gap-6">
+          <a className="transition-colors hover:text-[var(--accent)]" href={site.linkedin} target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+          <a className="transition-colors hover:text-[var(--accent)]" href={`mailto:${site.email}`}>
+            Email
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
 }

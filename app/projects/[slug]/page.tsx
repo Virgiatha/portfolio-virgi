@@ -13,12 +13,29 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
-  return { title: project.shortTitle, description: project.summary, openGraph: { title: `${project.shortTitle} | Virgi Atha Raditya `, description: project.summary, images: [{ url: project.image }] } };
+  return {
+    title: project.shortTitle,
+    description: project.summary,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      title: `${project.shortTitle} | Virgi Atha Raditya`,
+      description: project.summary,
+      images: [{ url: project.image }],
+      type: "article",
+    },
+    twitter: { card: "summary_large_image", title: project.shortTitle, description: project.summary },
+  };
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) notFound();
-  return <><Navbar /><ProjectDetail project={project} /><Footer /></>;
+  return (
+    <>
+      <Navbar />
+      <ProjectDetail project={project} />
+      <Footer />
+    </>
+  );
 }
