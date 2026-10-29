@@ -98,6 +98,33 @@ export const projects: Project[] = [
     image: "/images/projects/iot.webp",
     imageAlt: "Mobile water-monitoring dashboard beside Telegram Bot controls",
   },
+  {
+    slug: "library-borrowing-analytics",
+    title: "Library Borrowing Analytics Dashboard",
+    shortTitle: "Library Borrowing Dashboard",
+    category: "Data Analytics · Power BI",
+    summary: "A Power BI dashboard connected to a MySQL library database, turning borrowing transactions into KPIs, trends, popular books, category distribution, and active-user insights.",
+    overview: "This project analyzes borrowing activity in a library system using Power BI connected to a MySQL database. The dashboard provides insights into borrowing trends, popular books, category distribution, and user activity to help understand library usage patterns.",
+    problem: "Libraries need to understand borrowing behavior to manage book inventory and improve user services, but raw transaction data alone makes it difficult to identify trends, popular books, and active users.",
+    solution: "The dashboard is built on a relational MySQL database spanning book, author, category, transaction, user, bookauthor, and bookcategory tables, connected to Power BI through an ODBC connector with DAX measures for the required KPIs.",
+    technologies: ["Power BI", "MySQL", "SQL", "DAX", "ODBC Connector"],
+    features: [
+      "KPI cards for total borrowings, books borrowed, and books returned",
+      "Borrowing trend line chart over time",
+      "Top borrowed books bar chart",
+      "Category distribution donut chart",
+      "Most active library users bar chart",
+    ],
+    results: [
+      "Classic is the most borrowed category, accounting for 38% of total transactions.",
+      "Frankenstein and Wuthering Heights are the most popular books.",
+      "Borrowing activity increased significantly in September compared to August.",
+      "A small group of users contributes a higher share of borrowing activity.",
+    ],
+    metric: { value: "38%", label: "of borrowings in the Classic category" },
+    image: "/images/projects/powerbi.webp",
+    imageAlt: "Power BI Library Borrowing Analytics Dashboard showing KPIs, borrowing trend, top books, category distribution, and active users",
+  },
 ];
 
 export const getProject = (slug: string) => projects.find((project) => project.slug === slug);
