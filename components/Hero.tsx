@@ -1,43 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, ExternalLink } from "lucide-react";
 import { site } from "@/data/site";
 
 export default function Hero() {
   return (
-    <section id="home" className="section pt-32 sm:pt-40">
-      <div className="container grid items-center gap-12 lg:grid-cols-12">
-        <div className="lg:col-span-7">
+    <section id="home" className="section pt-32 sm:pt-48">
+      <div className="container grid items-center gap-16 lg:grid-cols-12">
+        <div className="lg:col-span-6">
           <p className="eyebrow">{site.eyebrow}</p>
-          <h1 className="mt-6 text-[var(--text-hero)] font-semibold leading-[1.05] tracking-tight" style={{ fontFamily: "var(--font-heading)" }}>
-            {site.name}
-          </h1>
-          <p className="copy mt-6 max-w-2xl text-lg">{site.heroSubline}</p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link href="/#projects" className="button button-primary">
-              View projects <ArrowRight size={16} />
+          <h1 className="heading-hero mt-6">{site.name}</h1>
+          <p className="lead mt-8 max-w-xl">{site.heroSubline}</p>
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <Link href="/#projects" className="button button-lg button-primary">
+              View projects <ArrowRight size={18} strokeWidth={2.2} />
             </Link>
-            <a href={site.cv} target="_blank" rel="noreferrer" className="button button-secondary">
-              <Download size={16} /> Download CV
-            </a>
-            <a
-              href={site.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="px-2 py-2 text-sm text-[var(--ink-muted)] underline-offset-4 transition-colors hover:text-[var(--ink)] hover:underline"
-            >
-              LinkedIn
+            <a href={site.cv} target="_blank" rel="noreferrer" className="button button-lg button-secondary">
+              <Download size={18} strokeWidth={2.2} /> CV
             </a>
           </div>
+          <a
+            href={site.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="link-accent mt-6 inline-flex items-center gap-2 text-sm font-medium"
+          >
+            <ExternalLink size={16} /> LinkedIn
+          </a>
         </div>
-        <div className="lg:col-span-5">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[var(--radius)] border border-[var(--line)]">
+        <div className="lg:col-span-6">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[var(--radius-lg)] border-2 border-[var(--line-strong)]">
             <Image
               src="/images/virgi-atha-raditya.webp"
               alt="Portrait of Virgi Atha Raditya"
               fill
               priority
-              sizes="(max-width: 1024px) 80vw, 420px"
+              sizes="(max-width: 1024px) 80vw, 480px"
               className="object-cover"
             />
           </div>

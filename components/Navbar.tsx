@@ -45,8 +45,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 bg-[var(--bg)] transition-colors ${
-        scrolled ? "border-b border-[var(--line)]" : "border-b border-transparent"
+      className={`fixed inset-x-0 top-0 z-50 bg-[var(--bg)] transition-all ${
+        scrolled ? "border-b border-[var(--line)] shadow-[0_1px_0_rgba(22,24,29,.02)]" : "border-b border-transparent"
       }`}
     >
       <nav aria-label="Primary" className="container flex h-16 items-center justify-between">
@@ -56,19 +56,27 @@ export default function Navbar() {
         <div className="hidden items-center gap-1 md:flex">
           {site.nav.map((item) => {
             const id = item.href.split("#")[1];
+            const isActive = active === id;
             return (
               <Link
                 key={item.label}
                 href={item.href}
-                className={`flex min-h-11 items-center rounded-[var(--radius-pill)] px-3 text-sm transition-colors ${
-                  active === id ? "text-[var(--accent)]" : "text-[var(--ink-muted)] hover:text-[var(--ink)]"
+                aria-current={isActive ? "true" : undefined}
+                className={`relative flex min-h-11 items-center rounded-[var(--radius-pill)] px-3 text-sm transition-colors ${
+                  isActive ? "text-[var(--ink)]" : "text-[var(--ink-muted)] hover:text-[var(--ink)]"
                 }`}
               >
                 {item.label}
+                <span
+                  aria-hidden
+                  className={`absolute inset-x-3 bottom-2 h-px origin-left bg-[var(--accent)] transition-transform duration-200 ${
+                    isActive ? "scale-x-100" : "scale-x-0"
+                  }`}
+                />
               </Link>
             );
           })}
-          <a href={`mailto:${site.email}`} className="button button-primary ml-2">
+          <a href={`mailto:${site.email}`} className="button button-primary ml-3">
             Email me
           </a>
         </div>

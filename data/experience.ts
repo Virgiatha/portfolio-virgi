@@ -12,7 +12,7 @@ export const experience = [
     description: "Assisted faculty in delivering two core computer science courses. Supported LAN installation, network topology design, and guided students through hands-on labs with Cisco Packet Tracer and Debian web server deployment. Also mentored students in applying numerical methods to computational problems and debugging algorithmic solutions." 
   },
   { 
-    date: "Aug 2022–Feb 2026", 
+    date: "Oct 2023–Dec 2023", 
     role: "Full Stack Developer", 
     organization: "CV Iqromaya Global Mandiri", 
     description: "Built responsive landing pages and marketing sites for small businesses (UMKM) using Google Sites. Focused on user-friendly design, fast deployment, and minimal maintenance overhead for clients with limited technical resources." 
