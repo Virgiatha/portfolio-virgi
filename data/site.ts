@@ -1,3 +1,6 @@
+export type Skill = { label: string; icon?: string };
+export type SkillGroup = { group: string; items: Skill[] };
+
 export const site = {
   name: "Virgi Atha Raditya",
   shortName: "Virgi",
@@ -17,14 +20,42 @@ export const site = {
     "I like problems where software meets the real world: a research question that needs clean data, an internal tool a team actually uses, or a sensor that needs a reliable dashboard. I care about systems that stay simple, load fast, and are easy for the people using them.",
   ],
   skills: [
-    { group: "Data & AI", items: "Python, NLP, machine learning, SQL, Power BI" },
-    { group: "Web", items: "CodeIgniter, Laravel, Node.js, JavaScript, MySQL" },
-    { group: "IoT & Systems", items: "ESP32, sensors, Telegram Bot, Linux, networking" },
-  ],
+    {
+      group: "Data & AI",
+      items: [
+        { label: "Python", icon: "python" },
+        { label: "NLP" },
+        { label: "Machine learning" },
+        { label: "SQL" },
+        { label: "Power BI" },
+      ],
+    },
+    {
+      group: "Web",
+      items: [
+        { label: "CodeIgniter", icon: "codeigniter" },
+        { label: "Laravel", icon: "laravel" },
+        { label: "Node.js", icon: "nodedotjs" },
+        { label: "JavaScript", icon: "javascript" },
+        { label: "MySQL", icon: "mysql" },
+        { label: "PostgreSQL", icon: "postgresql" },
+      ],
+    },
+    {
+      group: "IoT & Systems",
+      items: [
+        { label: "ESP32", icon: "espressif" },
+        { label: "Sensors" },
+        { label: "Telegram Bot", icon: "telegram" },
+        { label: "Linux", icon: "linux" },
+        { label: "Networking" },
+      ],
+    },
+  ] as SkillGroup[],
   nav: [
     { label: "About", href: "/#about" },
     { label: "Projects", href: "/#projects" },
     { label: "Experience", href: "/#experience" },
     { label: "Contact", href: "/#contact" },
   ],
-} as const;
+};

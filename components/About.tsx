@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "@/data/site";
 
 export default function About() {
@@ -21,7 +22,22 @@ export default function About() {
               {site.skills.map((skill) => (
                 <div key={skill.group} className="panel p-6">
                   <h3 className="stat-value">{skill.group}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--ink-muted)]">{skill.items}</p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {skill.items.map((item) => (
+                      <li key={item.label} className="chip gap-2">
+                        {item.icon && (
+                          <Image
+                            src={`/images/skills/${item.icon}.svg`}
+                            alt=""
+                            width={16}
+                            height={16}
+                            className="size-4 shrink-0"
+                          />
+                        )}
+                        <span>{item.label}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
