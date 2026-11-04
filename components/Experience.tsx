@@ -1,4 +1,5 @@
 import { experience } from "@/data/experience";
+import ImageGallery from "./ImageGallery";
 
 export default function Experience() {
   return (
@@ -17,6 +18,7 @@ export default function Experience() {
                 <h3 className="subheading">{item.role}</h3>
                 <p className="mt-1 text-sm font-medium text-[var(--accent)]">{item.organization}</p>
                 <p className="copy mt-4 max-w-[70ch] text-sm">{item.description}</p>
+                {item.gallery && <ImageGallery images={item.gallery} />}
               </div>
             </article>
           ))}

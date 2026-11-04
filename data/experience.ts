@@ -3,7 +3,12 @@ export const experience = [
     date: "Feb–May 2025", 
     role: "Full Stack Developer", 
     organization: "Stasiun Meteorologi Syamsudin Noor", 
-    description: "Designed and developed SiBisa, a centralized inventory and internal-loan management system for a national weather station. Integrated QR code scanning for faster item tracking, Telegram bot notifications for approvals and updates, and real-time status monitoring across web and mobile platforms." 
+    description: "Designed and developed SiBisa, a centralized inventory and internal-loan management system for a national weather station. Integrated QR code scanning for faster item tracking, Telegram bot notifications for approvals and updates, and real-time status monitoring across web and mobile platforms.",
+    gallery: [
+      "/images/kegiatan/bmkg1.jpeg",
+      "/images/kegiatan/bmkg2.jpeg",
+      "/images/kegiatan/bmkg3.jpeg"
+    ]
   },
   { 
     date: "Feb–Dec 2024", 
@@ -15,12 +20,20 @@ export const experience = [
     date: "Oct 2023–Dec 2023", 
     role: "Full Stack Developer", 
     organization: "CV Iqromaya Global Mandiri", 
-    description: "Built responsive landing pages and marketing sites for small businesses (UMKM) using Google Sites. Focused on user-friendly design, fast deployment, and minimal maintenance overhead for clients with limited technical resources." 
+    description: "Built responsive landing pages and marketing sites for small businesses (UMKM) using Google Sites. Focused on user-friendly design, fast deployment, and minimal maintenance overhead for clients with limited technical resources.",
+    gallery: [
+      "/images/kegiatan/iqramaya.jpeg"
+    ]
   },
   { 
     date: "Jan–Mar 2020", 
     role: "IT Support Technician", 
     organization: "PT Angkasa Pura I", 
-    description: "Provided technical support for airport IT infrastructure and communication systems. Diagnosed and resolved network and hardware issues. Developed a VoIP communication system to improve internal connectivity across airport terminals and operations centers." 
+    description: "Provided technical support for airport IT infrastructure and communication systems. Diagnosed and resolved network and hardware issues. Developed a VoIP communication system to improve internal connectivity across airport terminals and operations centers.",
+    gallery: [
+      "/images/kegiatan/ap1.jpg",
+      "/images/kegiatan/ap2.jpg",
+      "/images/kegiatan/ap3.jpg"
+    ]
   },
 ];
