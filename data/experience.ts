@@ -14,7 +14,11 @@ export const experience = [
     date: "Feb–Dec 2024", 
     role: "Teaching Assistant — Computer Network & Numerical Analysis", 
     organization: "Lambung Mangkurat University", 
-    description: "Assisted faculty in delivering two core computer science courses. Supported LAN installation, network topology design, and guided students through hands-on labs with Cisco Packet Tracer and Debian web server deployment. Also mentored students in applying numerical methods to computational problems and debugging algorithmic solutions." 
+    description: "Assisted faculty in delivering two core computer science courses. Supported LAN installation, network topology design, and guided students through hands-on labs with Cisco Packet Tracer and Debian web server deployment. Also mentored students in applying numerical methods to computational problems and debugging algorithmic solutions.",
+    gallery: [
+      "/images/kegiatan/asdos1.jpeg",
+      "/images/kegiatan/asdos2.jpeg"
+    ]
   },
   { 
     date: "Oct 2023–Dec 2023", 
